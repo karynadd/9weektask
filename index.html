@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PocketPet</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+  <style type="text/css">
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {font-family:'Coiny'; line-height: 1.6; color: #333; background-color: #FEF8F0; cursor: url('paw2.png') 16 16, auto;}
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, .about-title, .review-title, .section-title, header h1, .site-footer h2 {font-family: 'Coiny';}
+    header {position: fixed; top: 0; left: 0; width: 100%; background: #FFC269; padding: 20px 0;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20); z-index: 1000;}
+    .container { width: 100%; width: 1200px; margin: 0 auto; }
+
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav li { font-weight: bold; }
+    
+    .hero { background-image: url('Back2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; display: flex; align-items: center;justify-content: center; text-align: left; padding-left: 30px; padding-right: 20px; color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); padding: 0 20px;}
+    .background {background-image: url();}
+    .hero h1 { font-size: 3rem; margin-bottom: 10px;}
+    .hero p { font-size: 1.2rem; color: white; }
+
+    .btn { display: inline-block; padding: 12px 30px; background: #FFC269; color: #fff; border-radius: 4px; margin-top: 20px; }
+    section { padding: 60px 0; border-bottom: 1px solid #eee; }
+    section h2 { font-size: 3rem; margin-bottom: 20px; }
+    .grid { display: grid; gap: 20px; }
+    .two-col { grid-template-columns: 1fr 1fr; }
+    .testimonials .item { background: #f9f9f9; padding: 20px; border-radius: 6px; }
+    .testimonials .name { margin-top: 10px; font-weight: bold; }
+    .about-section {background: url('paw-background.png') repeat; padding: 80px 20px;}
+  	.about-container {max-width: 1200px;margin: auto; padding: 0 20px;}
+    .about-container h2,
+    .about-container p {margin: 0 0 20px 0; text-align: left;}
+  	.about-title {font-family: 'Coiny';cursive;font-size: 3rem;color: #222;margin-bottom: 40px;text-align: left;}
+  	.card-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;}
+  	.about-card {background: white; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease;}
+  	.about-card:hover {transform: translateY(-5px);}
+  	.about-card h3 {font-size: 1.5rem; margin-bottom: 10px; margin-top: 20px; margin-right: 20px; margin-left: 20px;}
+  	.about-card p {font-size: 1rem; line-height: 1.5; margin-bottom: 20px; margin-top: 20px; margin-right: 20px; margin-left: 20px;}
+  	.card-img {height: 150px; margin-top: 0;}
+  	.about-card a {font-weight: bold; color: #333; text-decoration: none; margin: 20px;}
+    .card-bottom {display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding: 0 5px; margin-top: auto;}
+  	.background-image {background: url(Back3.jpeg); background-size: auto; background-attachment: fixed;}
+  	.video-box {width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto;border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);}
+  	.cat-status-section {padding: 60px 20px; display: flex;flex-direction: column; gap: 20px; align-items: center;}
+  	.img-left {align-self: flex-start; max-width: 300px;}
+  	.img-right {align-self: flex-end;max-width: 300px;}
+  	.cta-section {background-color: #FEF8F0;padding: 80px 20px;display: flex; flex-direction: column; gap: 40px;} 
+  	.cta-text h2 {font-family: 'Coiny', cursive; font-size: 3rem; margin-bottom: 10px;}
+  	.cta-text p {font-size: 1.1rem; line-height: 1.6; max-width: 600px;}
+  	.cta-image-container {width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto;border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);}
+  	.cta-img {width: 100%; border-radius: 12px; display: flex;}
+  	.cta-button-wrapper {text-align: center; margin-top: 30px;}
+    .buy-btn {background-color: #f7c96f; border: none; padding: 14px 32px; border-radius: 10px;font-size: 1.1rem; font-weight: bold; cursor: pointer; color: #000; text-decoration: none;display: inline-block; transition: background-color 0.3s ease;}
+    .buy-btn:hover {background-color: #eebc59;}
+  	.site-footer {background-color: #f7c96f; text-align: center; padding: 60px 20px; font-size: 0.95rem; color: #000;}
+  	.site-footer h2 {font-family: 'Coiny'; cursive; font-size: 2.5rem; margin-bottom: 20px;}
+  	.site-footer a {color: inherit; text-decoration: none; font-weight: bold;}
+  	.site-footer a:hover {text-decoration: underline;}
+  	.review-section {background-color: #fff8ee; padding: 80px 20px;}
+  	.review-title {font-family: 'Coiny'; cursive; font-size: 3rem; margin-bottom: 40px;text-align: left;}
+  	.review-container {display: flex; gap: 30px; padding-bottom: 10px; padding-left: 0; padding-right: 0;}
+  	.review-card {background-color: #fff2dc; border-radius: 30px; padding: 20px; flex: 0 0 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column;}
+  	.avatar {width: 60px; border-radius: 50%; margin-bottom: 10px;}
+  	.review-card h3 {font-size: 1.1rem; margin-bottom: 4px;}
+  	.stars {font-size: 1.1rem; color: #f7c96f; margin-bottom: 12px;}
+  	.highlight {font-weight: bold; margin-bottom: 10px; font-size: 0.95rem;}
+  	.review-card p {font-size: 0.9rem; line-height: 1.5;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#review">Review</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="home" class="hero bg-pic">
+    <div class="container">
+      <h1>PocketPet</h1>
+      <p>포켓펫은 반려동물의 감정을 읽고,</p>
+      <p>사람의 언어로 번역해주는 AI 감정 리더기.</p>
+      <a href="#purchase" class="btn">구매하기</a>
+    </div>
+  </section>
+  <section class="about-section background-image">
+    <div class="about-container">
+      <h2 class="about-title">About</h2>
+      <div class="card-grid">
+        <div class="about-card">
+          <h3>Propose</h3>
+          <p>
+            반려동물의 감정과 상태를 보다 쉽게 이해할 수 있도록 돕기 위해 이 제품을 기획하였습니다. 사람과 반려동물 사이의 진정한 소통을 위한 작은 다리가 되기를 바랍니다.
+          </p>
+          <div class="card-bottom">
+            <a href="#">더보기 →</a>
+            <img src="cat3.jpg" alt="cat hi" class="card-img" />
+          </div>
+      </div>
+      <div class="about-card">
+        <h3>Idea</h3>
+        <p>
+          반려동물의 감정과 기분을 실시간으로 감지하고, 사람의 언어로 번역해주는 AI 기반의 감정 번역기입니다.
+        </p>
+        <div class="card-bottom">
+          <a href="#">더보기 →</a>
+          <img src="cat2.jpg" alt="cat hi" class="card-img" />
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>For whom</h3>
+        <p>
+          반려동물과의 교감을 더 깊게 나누고 싶은 1인 가구, MZ세대, 펫팸족 보호자들을 위한 제품입니다.
+        </p>
+       <div class="card-bottom">
+          <a href="#">더보기 →</a>
+          <img src="cat1.jpg" alt="cat hi" class="card-img" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="video-section">
+  <div class="container">
+    <h2 class="section-title">How it works?</h2>
+    <video controls class="video-box">
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+  <section>
+    <div class="container">
+      <h2>App UI</h2>
+      <p>"이제 반려동물의 감정을 실시간으로 확인해보세요." 포켓펫 앱에서는 당신의 반려동물이 느끼는 감정을 아래와 같은 메시지로 알려줍니다:</p>
+      <img src="Group1.png">
+    </div>
+  </section>
+  
+  <section class="about-section">
+  <div class="about-container">
+    <h2>Talk to Your Pet</h2>
+    <p>당신의 반려동물이 느끼는 감정을 이젠 직접 들을 수 있어요.<br>포켓펫으로 그들의 마음을 더 가까이 느껴보세요.</p>
+  </div>
+  
+  <div class="cta-image-container">
+  <video class="cta-img" autoplay muted loop playsinline>
+    <source src="product.mp4" type="video/mp4">
+  </video>
+</div>
+
+  <div class="cta-button-wrapper">
+    <a href="#purchase" class="buy-btn">구매하기 →</a>
+  </div>
+</section>
+  <section class="review-section">
+    <div class="about-container">
+      <h2 class="review-title">Review</h2>
+
+      <div class="review-container">
+
+        <div class="review-card">
+          <img src="girl_2.jpg" alt="김수민" class="avatar">
+          <h3>김수민</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="highlight">“우리 강아지가 왜 혼자 울적해하는지 이제야 알겠어요.”</p>
+          <p>앱 덕분에 반려견의 감정 상태를 바로 확인할 수 있어서 너무 좋아요. 요즘은 감정 알림이 오면 바로 달려가서 쓰담쓰담 해줘요. 정말 신기하고 감동적이에요!</p>
+        </div>
+
+    
+        <div class="review-card">
+          <img src="boy_1.jpg" alt="염명현" class="avatar">
+          <h3>염명현</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="highlight">“기능은 좋아요, 다만 알림 커스터마이징이 더 있었으면 해요.”</p>
+          <p>우리 고양이는 예민한데 앱에서 감정 변화가 바로 와서 놀랐어요. 다만 알림음을 직접 설정할 수 있었으면 좋겠어요.</p>
+        </div>
+    
+        <div class="review-card">
+          <img src="girl_1.jpg" alt="최서진" class="avatar">
+          <h3>최서진</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="highlight">“진짜 내 반려동물이 말하는 것 같아요.”</p>
+          <p>‘지금 루비는 외로움을 느끼고 있어요’ 이런 알림이 너무 사랑스러워요. 반려동물이랑 교감하는 느낌이랄까? 혁신 그 자체입니다!</p>
+        </div>
+      
+        <div class="review-card">
+          <img src="boy_2.jpg" alt="이민윤" class="avatar">
+          <h3>이민윤</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="highlight">“우리 아이 마음이 보여요. 진짜로요.”</p>
+          <p>고양이가 좋아하는 간식을 찾았어요! 예전엔 몰랐는데, 감정 번역기로 어떤 음식엔 행복해하는 걸 보고 감동… 정말 반려동물과의 새로운 소통 시대가 온 것 같아요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+  	<h2>PocketPet</h2>
+  	<p>SEOULTECH WEB PUBLISHING PROJECT_POCKETPET</p>
+  	<p>(web designer: 카리나 / please contact via <a href="mailto:didkivskakaryna@gmail.com">didkivskakaryna@gmail.com</a>)</p>
+  	<p>Designed by Karyna © 2025</p>
+</footer>
+
+</body>
+</html>
