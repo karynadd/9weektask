@@ -22,6 +22,8 @@
     nav li { font-weight: bold; }
     
     .hero { background-image: url('Back2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; display: flex; align-items: center;justify-content: center; text-align: left; padding-left: 30px; padding-right: 20px; color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); padding: 0 20px;}
+    .header-container {display: flex; align-items: center; justify-content: space-between;}
+    .logo img {height: 50px; display: block;}
     .background {background-image: url();}
     .hero h1 { font-size: 3rem; margin-bottom: 10px;}
     .hero p { font-size: 1.2rem; color: white; }
@@ -39,7 +41,7 @@
     .about-container p {margin: 0 0 20px 0; text-align: left;}
   	.about-title {font-family: 'Coiny';cursive;font-size: 3rem;color: #222;margin-bottom: 40px;text-align: left;}
   	.card-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;}
-  	.about-card {background: white; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease;}
+  	.about-card {background: white; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease;}
   	.about-card:hover {transform: translateY(-5px);}
   	.about-card h3 {font-size: 1.5rem; margin-bottom: 10px; margin-top: 20px; margin-right: 20px; margin-left: 20px;}
   	.about-card p {font-size: 1rem; line-height: 1.5; margin-bottom: 20px; margin-top: 20px; margin-right: 20px; margin-left: 20px;}
@@ -76,7 +78,10 @@
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container header-container">
+      <a href="#home" class="logo">
+        <img src="Logo1.png" alt="PocketPet Logo">
+      </a>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
